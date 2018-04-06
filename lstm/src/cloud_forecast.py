@@ -101,10 +101,6 @@ class Cloud_Forecaster(Base_Forecaster):
 
         logging.info('Fitting training data ...')
 
-        # scaler_x = StandardScaler()
-        # x_train = np.expand_dims(scaler_x.fit_transform(self.feats['train']),
-        #                          axis=2)
-
         x_train = np.expand_dims(self.feats['train'], axis=2)
         y_train = np.expand_dims(self.labels['train'], axis=2)
 

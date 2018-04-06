@@ -68,7 +68,7 @@ def main(args):
     configs = {'time_steps'     : 4,
                'rnn_layers'     : [{'num_units': 128}],
                'dense_layers'   : [128, 128],
-               'training_steps' : 1000,
+               'training_steps' : 100000,
                'print_steps'    : 500,
                'pct_val'        : 0.0,
                'pct_test'       : 0.2,
@@ -89,7 +89,7 @@ def main(args):
     elif args.mode == 'solar':
         # complete solar irradiance forecasting using WRF data
         wrf = WRF_Irradiance_Forecaster(data, configs, args.fmt, args.scale, args.outpath)
-        wrf.fit('irradiance_diff')
+        wrf.fit('surface_irradiance_obs')
         rmse = wrf.get_test_score()
 
     print 'RMSE is %.2f' % rmse

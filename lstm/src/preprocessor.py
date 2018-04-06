@@ -202,10 +202,8 @@ class Cloud_Cover_Preprocessor(RNN_Weather_Preprocessor):
 
         # use NREL preprocessor to preprocess
         nrelpp = NREL_Preprocessor(outfmt='daybyday')
-        # convert to day by day data
-        # daybyday_data, selected_dates, ind_mins, ind_maxes\
-        #     = nrelpp.load_and_preprocess(self.rawdata, 'total_cloud_fraction')
 
+        # convert to day by day data
         daybyday_data, selected_dates, ind_mins, ind_maxes\
             = nrelpp.load_and_preprocess(self.rawdata, self.datakey)
 
@@ -247,12 +245,11 @@ class Cloud_Cover_Preprocessor(RNN_Weather_Preprocessor):
         ind_mins = ind_mins[mask]
         ind_maxes = ind_maxes[mask]
         dates = [dirtydates[ind] for ind, val in enumerate(mask.tolist()) if val]
-        # dates = dirtydates[mask.tolist()]
 
         logging.debug('maximum ind_mins is: %d' % np.max(ind_mins))
         logging.debug('minimum ind_maxes is: %d' % np.min(ind_maxes))
 
-        # select common features
+        # select common (part) features
         tmp = tmp[:-1, np.max(ind_mins) : (np.min(ind_maxes)+1)]
 
         logging.info('Input data is cleaned.')
