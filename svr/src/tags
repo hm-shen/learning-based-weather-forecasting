@@ -1,0 +1,46 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CLOUDY_PARA	main.py	/^                   'para_path' : cloudy_path}$/;"	v
+CONFIGS	main.py	/^               'PARTLY CLOUDY' : PARTLY_CLOUDY_PARA}$/;"	v
+DATA_PATH	main.py	/^    DATA_PATH = data_folder + data_name$/;"	v
+FLAG	main.py	/^    FLAG = {'show_figs' : True}$/;"	v
+MODE	main.py	/^    MODE = 'holdout training'$/;"	v
+MONTH_SELECTION	main.py	/^    MONTH_SELECTION = np.array([6,7,8])$/;"	v
+PARTLY_CLOUDY_PARA	main.py	/^                          'para_path' : party_cloudy_path}$/;"	v
+SUNNY_PARA	main.py	/^                  'para_path' : sunny_path}$/;"	v
+cloudy_fig_path	main.py	/^    cloudy_fig_path = fig_folder + 'cloudy_pred_results'$/;"	v
+cloudy_path	main.py	/^    cloudy_path = 'cloudy-holdout'$/;"	v
+compare_daily_mean	utils.py	/^def compare_daily_mean(preds_cube, labels_cube, sensor_selection=0):$/;"	f
+compare_pred_results	utils.py	/^def compare_pred_results(y_pred, y_test, var_name, style=None, axis_min=None, axis_max=None):$/;"	f
+compare_preds_labels	utils.py	/^def compare_preds_labels(preds, labels, masks, style='k-*'):$/;"	f
+compute_error	utils.py	/^def compute_error(y_pred, y_test):$/;"	f
+data_folder	main.py	/^    data_folder = '..\/data\/'$/;"	v
+data_name	main.py	/^    data_name = 'CESM_for_SVM.mat'$/;"	v
+data_preprocessing	utils.py	/^def data_preprocessing(dataset, month_selection):$/;"	f
+fig_folder	main.py	/^    fig_folder = '..\/figs\/'$/;"	v
+generate_features	solar_forecast.py	/^def generate_features(dataset):$/;"	f
+grid_search	solar_forecast.py	/^def grid_search(x_train, y_train, parameters):$/;"	f
+grid_search_wrapper	solar_forecast.py	/^def grid_search_wrapper(feats, labels, parameters) :$/;"	f
+holdout_train	solar_forecast.py	/^def holdout_train(feats, labels, parameters):$/;"	f
+holdout_train_wrapper	solar_forecast.py	/^def holdout_train_wrapper(feats, labels, parameters, masks):$/;"	f
+main	main.py	/^def main(configs) :$/;"	f
+normalize_data	utils.py	/^def normalize_data(data, supremum):$/;"	f
+partly_cloudy_fig_path	main.py	/^    partly_cloudy_fig_path = fig_folder + 'partly_cloudy_pred_results'$/;"	v
+party_cloudy_path	main.py	/^    party_cloudy_path = 'partly_cloudy-holdout'$/;"	v
+pickles_folder	utils.py	/^pickles_folder = '..\/pickles\/'$/;"	v
+plot_irradiance_drop	utils.py	/^def plot_irradiance_drop(preds, meas, style='k-*'):$/;"	f
+plot_preds_labels	utils.py	/^def plot_preds_labels(preds, labels, style='k-*'):$/;"	f
+predict	solar_forecast.py	/^def predict(x_test, model):$/;"	f
+print_dict	utils.py	/^def print_dict(dictionary):$/;"	f
+read_mat	utils.py	/^def read_mat(path):$/;"	f
+regroup_data	utils.py	/^def regroup_data(preds, labels, masks, data_format=None):$/;"	f
+restore_model	utils.py	/^def restore_model(name):$/;"	f
+save_model	utils.py	/^def save_model(var,name):$/;"	f
+sunny_fig_path	main.py	/^    sunny_fig_path = fig_folder + 'sunny_pred_results'$/;"	v
+sunny_path	main.py	/^    sunny_path = 'sunny-holdout'$/;"	v
+weather_classification	solar_forecast.py	/^def weather_classification(feats, MODE, labels=None):$/;"	f
+weather_prediction	solar_forecast.py	/^def weather_prediction(feats, labels, parameters, masks):$/;"	f
