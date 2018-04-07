@@ -75,10 +75,15 @@ def lstm_model(time_steps, rnn_layers, dense_layers=None, learning_rate=0.01,
 
         logging.info("building LSTM model...")
 
+        # create a stacked lstm accord. to input arguments
         stacked_lstm = rnn.MultiRNNCell(lstm_cells(rnn_layers), state_is_tuple=True)
+        # split by time steps
         x_ =  tf.unstack(features, num=time_steps, axis=1)
+        # apply rnn recurrently
         output, layers = rnn.static_rnn(stacked_lstm, x_, dtype=dtypes.float32)
+        # feed the output of rnn into dnn
         output = dnn_layers(output[-1], dense_layers)
+        # perform linear regression
         prediction, loss = tflearn.models.linear_regression(output, labels)
         train_optimizer = tf.contrib.layers.optimize_loss(
             loss, tf.train.get_global_step(), optimizer=optimizer,

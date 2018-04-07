@@ -104,6 +104,9 @@ class Cloud_Forecaster(Base_Forecaster):
         x_train = np.expand_dims(self.feats['train'], axis=2)
         y_train = np.expand_dims(self.labels['train'], axis=2)
 
+        print 'Shape of x_train is: ',x_train.shape
+        print 'Shape of y_train is: ',y_train.shape
+
         self.regressor.fit(x_train, y_train,
                            batch_size=self.configs['batch_size'],
                            steps=self.configs['training_steps'])
