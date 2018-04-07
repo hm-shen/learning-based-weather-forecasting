@@ -14,7 +14,8 @@ the amount solar energy in the next few hours/days is of great
 importance to power system operations and control. Currently two
 methods are implemented and documented below. If you have any
 questions with respect to this project, please contact me through
-email (my unique name is `hmshen`)
+email (my unique name is `hmshen` I should able to help during this
+summer.
 
 NOTICE: If you need to use the code below (even part of it), I would
 recommend you read it critically before using it.
@@ -28,6 +29,26 @@ Tensorflow, Sklearn, Pandas, Numpy, Scipy, ....
 I would recommend you use Anaconda Python.
 
 ** SVM Based Solar Irradiance Forecasting
+This part is based on
+[[http://ieeexplore.ieee.org/document/7475892/][Hourly Solar Irradiance Prediction Based on Support Vector Machine and
+Its Error Analysis]]
+
+*** Getting Started
+There are three modes: =weather_prediction=, =houldout_trainint=,
+=grid_search=. =weather_prediction= will load the input data and
+complete solar irradiance prediction; =holdout_training= will split
+the input data into holdout training and run test on the trained
+model; =grid_search= will search in the given set of parameters and
+find the best one.
+
+To run this project, you can directly =python main.py= after manually
+setting the running mode parameters in =main.py= file.
+
+*** Implementation
+Given a set of training data, K-means algorithm is used to separate
+data into three cluster where each of them implies a specific weather
+type (cloudy, partly cloudy, sunny). Then, code will train a Support
+Vector Regression model for each type of weather.
 
 ** LSTM Based Cloud Fraction Forecasting
 Since both hourly GHI and hourly cloud fraction can be considered as

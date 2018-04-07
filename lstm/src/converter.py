@@ -69,7 +69,6 @@ class Cloud_Cover_Converter(Base_Converter):
     def _seq_to_rnn(self, seqdata, labels=False):
 
         rnn_data = []
-        # for idx in range(0, len(daily_data) - self.time_steps, self.scale):
         for idx in range(0, len(seqdata) - self.time_steps, 1):
             if labels:
                 # return labels rather than feat vec

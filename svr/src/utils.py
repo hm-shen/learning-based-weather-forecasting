@@ -103,8 +103,11 @@ def regroup_data(preds, labels, masks, data_format=None):
 
     # remove data entries for excluded months
     # reshape data vector into a data cube with shape (25 x 24 x days)
-    labels_vec = labels_vec[masks['month mask']].reshape((-1, 25, 24))
-    preds_vec = preds_vec[masks['month mask']].reshape((-1, 25, 24))
+    # labels_vec = labels_vec[masks['month mask']].reshape((-1, 25, 24))
+    # preds_vec = preds_vec[masks['month mask']].reshape((-1, 25, 24))
+
+    labels_vec = labels_vec[masks['month mask']].reshape((-1, 24, 25))
+    preds_vec = preds_vec[masks['month mask']].reshape((-1, 24, 25))
 
     # for debugging
     logging.debug('the shape of preds_vec is '.format(preds_vec.shape))

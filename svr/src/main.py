@@ -79,12 +79,12 @@ if __name__ == '__main__' :
     cloudy_fig_path = fig_folder + 'cloudy_pred_results'
     partly_cloudy_fig_path = fig_folder + 'partly_cloudy_pred_results'
 
-    # consts
+    # consts SET PARAMETERS HERE !!!!!!!!!!
     DATA_PATH = data_folder + data_name
     FLAG = {'show_figs' : True}
     # MODE = 'grid search'
-    MODE = 'holdout training'
-    # MODE = 'weather prediction'
+    # MODE = 'holdout training'
+    MODE = 'weather prediction'
     MONTH_SELECTION = np.array([6,7,8])
     SUNNY_PARA = {'name': 'sunny', \
                   'test_size' : 0.2, \
