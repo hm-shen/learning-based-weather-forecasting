@@ -1,11 +1,9 @@
-#+TITLE: Documentation on Solar Forecasting Project
+#+TITLE: Learning Based Solar Forecasting
 #+AUTHOR: Haoming Shen
 #+DATE: 04/02/2018
 #+STARTUP: indent
 #+OPTIONS: tex:dvipng
 #+LATEX_HEADER: \input{./configs.tex}
-
-\clearpage
 
 ** Overview
 This project aims at improving intra-day Ground Horizontal Irradiance
@@ -81,7 +79,6 @@ or
 #+BEGIN_SRC bash
 ./run_wrf_solar.sh
 #+END_SRC
-
 
 *** Implementation
 Note that this implementation of LSTM based time series is based on
