@@ -68,7 +68,20 @@ python -p /path/to/NREL_data/ \
        -n 'name of the dataset' \
 #+END_SRC
 
-Several example bash scripts are included in =/src= folder.
+Several example bash scripts are included in =/src= folder. You can
+execute them by running (NREL data for cloud fraction forecasting or
+WRF data for solar irradiance forecasting)
+
+#+BEGIN_SRC bash
+./run_nrel_cloud.sh
+#+END_SRC
+
+or
+
+#+BEGIN_SRC bash
+./run_wrf_solar.sh
+#+END_SRC
+
 
 *** Implementation
 Note that this implementation of LSTM based time series is based on
