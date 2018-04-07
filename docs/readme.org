@@ -1,13 +1,11 @@
-#+TITLE: Documentation on Solar Forecasting Project
+#+TITLE: Learning Based Solar Forecasting
 #+AUTHOR: Haoming Shen
 #+DATE: 04/02/2018
 #+STARTUP: indent
 #+OPTIONS: tex:dvipng
 #+LATEX_HEADER: \input{./configs.tex}
 
-\clearpage
-
-** Overview
+* Overview
 This project aims at improving intra-day Ground Horizontal Irradiance
 (GHI) forecasting using machine learning based algorithms. Predicting
 the amount solar energy in the next few hours/days is of great
@@ -28,7 +26,7 @@ Tensorflow, Sklearn, Pandas, Numpy, Scipy, ....
 
 I would recommend you use Anaconda Python.
 
-** SVM Based Solar Irradiance Forecasting
+* SVM Based Solar Irradiance Forecasting
 This part is based on
 [[http://ieeexplore.ieee.org/document/7475892/][Hourly Solar Irradiance Prediction Based on Support Vector Machine and
 Its Error Analysis]]
@@ -50,7 +48,7 @@ data into three cluster where each of them implies a specific weather
 type (cloudy, partly cloudy, sunny). Then, code will train a Support
 Vector Regression model for each type of weather.
 
-** LSTM Based Cloud Fraction Forecasting
+* LSTM Based Cloud Fraction Forecasting
 Since both hourly GHI and hourly cloud fraction can be considered as
 time series, solving it using Long short-term memory (LSTM) becomes
 natural. This part implements a simple LSTM model for supervised cloud
