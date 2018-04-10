@@ -81,10 +81,10 @@ if __name__ == '__main__' :
 
     # consts SET PARAMETERS HERE !!!!!!!!!!
     DATA_PATH = data_folder + data_name
-    FLAG = {'show_figs' : True}
+    FLAG = {'show_figs' : False}
     # MODE = 'grid search'
-    # MODE = 'holdout training'
-    MODE = 'weather prediction'
+    MODE = 'holdout training'
+    # MODE = 'weather prediction'
     MONTH_SELECTION = np.array([6,7,8])
     SUNNY_PARA = {'name': 'sunny', \
                   'test_size' : 0.2, \

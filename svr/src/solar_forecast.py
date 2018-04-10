@@ -72,13 +72,14 @@ def weather_classification(feats, MODE, labels=None):
         kmeans = KMeans(n_clusters=3, random_state=0).fit(feats[:,[0,1,2,3,4,6,7]])
         cluster_center = kmeans.cluster_centers_
         ''' sort according to cloud fraction '''
-        cluster_center = cluster_center[cluster_center[:,5].argsort()]
+
+        sort_ind = cluster_center[:,5].argsort()
         print 'clustering centers are:\n', cluster_center
         utl.save_model(kmeans, 'weather-classification_k-means')
 
-        sunny_mask = kmeans.labels_ == 0
-        partly_cloudy_mask = kmeans.labels_ == 1
-        cloudy_mask = kmeans.labels_ == 2
+        sunny_mask = kmeans.labels_ == sort_ind[0]
+        partly_cloudy_mask = kmeans.labels_ == sort_ind[1]
+        cloudy_mask = kmeans.labels_ == sort_ind[2]
 
     elif (MODE == 'weather prediction') :
         kmeans = utl.restore_model('weather-classification_k-means')
