@@ -51,7 +51,7 @@ def main(configs) :
 
         ''' regroup the data '''
         preds_cube, labels_cube = utl.regroup_data(preds, labels_backup, proc_mask)
-        utl.compare_daily_mean(preds_cube, labels_cube, sensor_selection=4)
+        utl.compare_daily_mean(preds_cube, labels_cube, sensor_selection=24)
         plt.show()
 
 if __name__ == '__main__' :
@@ -83,8 +83,8 @@ if __name__ == '__main__' :
     DATA_PATH = data_folder + data_name
     FLAG = {'show_figs' : False}
     # MODE = 'grid search'
-    MODE = 'holdout training'
-    # MODE = 'weather prediction'
+    # MODE = 'holdout training'
+    MODE = 'weather prediction'
     MONTH_SELECTION = np.array([6,7,8])
     SUNNY_PARA = {'name': 'sunny', \
                   'test_size' : 0.2, \

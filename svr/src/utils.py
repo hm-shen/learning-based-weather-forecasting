@@ -103,9 +103,6 @@ def regroup_data(preds, labels, masks, data_format=None):
 
     # remove data entries for excluded months
     # reshape data vector into a data cube with shape (25 x 24 x days)
-    # labels_vec = labels_vec[masks['month mask']].reshape((-1, 25, 24))
-    # preds_vec = preds_vec[masks['month mask']].reshape((-1, 25, 24))
-
     labels_vec = labels_vec[masks['month mask']].reshape((-1, 24, 25))
     preds_vec = preds_vec[masks['month mask']].reshape((-1, 24, 25))
 
@@ -121,8 +118,8 @@ def compare_daily_mean(preds_cube, labels_cube, sensor_selection=0):
     logging.info("Start comparing predicted daily mean and measured daily mean")
 
     # calculate daily mean of each sensor (nans are excluded)
-    labels_mean = np.nanmean(labels_cube, axis=2)
-    preds_mean = np.nanmean(preds_cube, axis=2)
+    labels_mean = np.nanmean(labels_cube, axis=1)
+    preds_mean = np.nanmean(preds_cube, axis=1)
 
     logging.debug('the shape of labels_mean is {}'.format(labels_mean.shape))
     logging.debug('the shape of preds_mean is {}'.format(preds_mean.shape))
@@ -279,4 +276,3 @@ if __name__ == '__main__':
     ax.grid(True)
     plt.show()
 '''
-
