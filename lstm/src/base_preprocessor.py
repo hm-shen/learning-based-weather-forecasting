@@ -41,7 +41,6 @@ class Base_Preprocessor(object):
                          'hour': False, 'day': False,
                          'month': False, 'year': False}
 
-
         logging.info('Preprocessor is initialized.')
 
     def load(self, data):
@@ -76,7 +75,7 @@ class Base_Preprocessor(object):
             self.keyflags[keys] = True
             self.rawdata[keys] = self.rawdata[keys].flatten().astype(int)
 
-        # check if min and sec exists in input data
+        # check if min and sec exists in input data key
         for keys in ['sec', 'min']:
             if keys in self.rawdata.keys():
                 self.keyflags[keys] = True
@@ -156,6 +155,8 @@ class NREL_Preprocessor(Base_Preprocessor):
             sys.exit(-1)
 
     def _cal_daylength(self):
+
+        logging.info('Start calculating daylength for input data ...')
 
         ''' calculate daylength for input data '''
 

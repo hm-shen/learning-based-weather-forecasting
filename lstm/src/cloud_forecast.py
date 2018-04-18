@@ -40,9 +40,13 @@ class Base_Forecaster(object):
 
     def fit(self):
 
+        ''' prepared for children '''
+
         pass
 
     def get_test_score(self):
+
+        ''' prepared for children '''
 
         pass
 
@@ -101,12 +105,14 @@ class Cloud_Forecaster(Base_Forecaster):
 
         logging.info('Fitting training data ...')
 
+        # adjust matrix dimensions
         x_train = np.expand_dims(self.feats['train'], axis=2)
         y_train = np.expand_dims(self.labels['train'], axis=2)
 
-        print 'Shape of x_train is: ',x_train.shape
-        print 'Shape of y_train is: ',y_train.shape
+        logging.debug('Shape of x_train is: %s' % str(x_train.shape))
+        logging.debug('Shape of y_train is: %s' % str(y_train.shape))
 
+        # start training
         self.regressor.fit(x_train, y_train,
                            batch_size=self.configs['batch_size'],
                            steps=self.configs['training_steps'])
@@ -119,7 +125,10 @@ class Cloud_Forecaster(Base_Forecaster):
 
         x_test = np.expand_dims(self.feats['test'], axis=2)
 
+        # start prediction
         preds = self.regressor.predict(x_test)
+
+        # calculate MSE error
         mse = mean_squared_error(self.labels['test'], preds)
 
         rst_dict = {'preds': preds, 'labels': self.labels['test']}
@@ -146,6 +155,7 @@ class WRF_Irradiance_Forecaster(Cloud_Forecaster):
                                             self.configs['time_steps'],
                                             datakey,
                                             self.scale, 0.2, self.mode)
+
         self.feats, self.labels = wrfip.preprocess()
         self._fit()
 

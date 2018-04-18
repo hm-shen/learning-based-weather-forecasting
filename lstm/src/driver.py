@@ -16,13 +16,13 @@ import matplotlib.pyplot as plt
 plt.switch_backend('agg')
 from cloud_forecast import Cloud_Forecaster, WRF_Irradiance_Forecaster
 
-# logging.basicConfig(filename='../logs/cloud_forecast.log',
-#                     filemode='w',
-#                     level=logging.INFO,
-#                     format='%(levelname)s %(message)s')
-
-logging.basicConfig(stream=sys.stdout, level=logging.DEBUG,
+logging.basicConfig(filename='../logs/cloud_forecast.log',
+                    filemode='w',
+                    level=logging.INFO,
                     format='%(levelname)s %(message)s')
+
+# logging.basicConfig(stream=sys.stdout, level=logging.DEBUG,
+#                     format='%(levelname)s %(message)s')
 
 def arg_parser():
 
@@ -81,7 +81,7 @@ def main(args):
     print 'input configs are:', configs
 
     if args.mode == 'cloud':
-        # complete cloud fractoin prediction using NREL data
+        # complete cloud fraction prediction using NREL data
         cf = Cloud_Forecaster(data, configs, args.fmt, args.scale, args.outpath)
         cf.fit('total_cloud_fraction', 8, 15)
         rmse = cf.get_test_score()
