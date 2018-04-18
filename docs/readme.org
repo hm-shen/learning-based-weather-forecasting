@@ -18,7 +18,8 @@ NOTICE: If you need to use the code below (even part of it), I would
 recommend you read it critically before using it.
 
 *** Github repo for this project
-[[https://github.com/hm-shen/weather_forecast/tree/master/src]]
+[[https://github.com/hm-shen/learning-based-weather-forecasting][
+Link to Github repo (click me!)]]
 
 *** Dependencies
 Tensorflow, Sklearn, Pandas, Numpy, Scipy, ....
