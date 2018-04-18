@@ -27,8 +27,8 @@ Tensorflow, Sklearn, Pandas, Numpy, Scipy, ....
 
 I would recommend you use Anaconda Python.
 
-*To clone this repository into your server/local machine, copy the URL
-of this page and execute the following command*
+*To clone this repository into your server/local machine, execute the
+following command*
 
 #+BEGIN_SRC bash
 git clone https://github.com/hm-shen/learning-based-weather-forecasting
