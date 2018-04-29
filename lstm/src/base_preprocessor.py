@@ -113,6 +113,7 @@ class WRF_Preprocessor(Base_Preprocessor):
                                 self.rawdata['month'][ind],
                                 self.rawdata['day'][ind])
                            for ind in range(self.rawdata[datakey].shape[0])]
+
             return (self.data, self.dates)
 
 
