@@ -7,4 +7,7 @@
                       -m cloud\
                       -o ../outputs/\
                       -n NRELMINS\
+                      --time_steps 120\
+                      --ubdmin 378\
+                      --lbdmax 1065\
                       -s 60)

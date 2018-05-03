@@ -231,6 +231,8 @@ class Cloud_Cover_Preprocessor(RNN_Weather_Preprocessor):
         logging.debug('ind_maxes is: %s' % str(ind_maxes))
         logging.debug('mean of ind_min is: %d' % np.mean(ind_mins))
         logging.debug('mean of ind_max is: %d' % np.mean(ind_maxes))
+        logging.debug('maximum ind_mins is: %d' % np.max(ind_mins))
+        logging.debug('minimum ind_maxes is: %d' % np.min(ind_maxes))
 
         daylength = dirtydata.shape[1]
 
